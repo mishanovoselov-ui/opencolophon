@@ -286,3 +286,18 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; background
   .hero__figure img { width: auto; height: clamp(5rem, 12vh, 8rem); }
   .hero__headline { max-width: 100%; }
 }
+
+/* --- hero split: 70% text, 30% mark */
+
+.hero__grid { grid-template-columns: 70% 30%; gap: 0; }
+
+.hero__figure { padding-left: clamp(1rem, 3vw, 3rem); }
+.hero__figure img { width: 100%; height: auto; }
+
+.hero__headline { font-size: clamp(2.3rem, 6.4vw, 6.4rem); max-width: 100%; }
+
+@media (max-width: 46rem) {
+  .hero__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero__figure { padding-left: 0; }
+  .hero__figure img { width: auto; height: clamp(5rem, 12vh, 8rem); }
+}
