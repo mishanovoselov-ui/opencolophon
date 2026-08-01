@@ -1,6 +1,6 @@
 # Methodology
 
-*Version 1.0. Published [DATE]. Change history: /changelog*
+*Version 1.0. Published 2 August 2026. Change history: /changelog*
 
 Open Colophon is a public record of what books declare about how they were made.
 
