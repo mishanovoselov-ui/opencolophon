@@ -1,0 +1,252 @@
+/* Open Colophon
+   Ink on paper. No accent colour: a registry that takes no side on AI
+   should not have a brand colour telling you which side it is on.
+   No webfonts, no CDN, no build step — the site must be servable from
+   a folder in twenty years. */
+
+:root {
+  --paper:  #ffffff;
+  --ink:    #0a0a0a;
+  --rule:   #d4d4d4;
+  --held:   #8a8a8a;   /* held, not published */
+  --measure: 34rem;
+  --gutter: clamp(1.5rem, 6vw, 7rem);
+  --grotesk: "Helvetica Neue", Helvetica, Arial, "Inter", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--grotesk);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--ink); }
+a:hover { background: var(--ink); color: var(--paper); border-bottom-color: transparent; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; background: none; color: inherit; }
+
+/* ------------------------------------------------------------ masthead */
+
+.masthead {
+  padding: var(--gutter) var(--gutter) 0;
+}
+
+.wordmark {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.wordmark a { border: 0; }
+.wordmark a:hover { background: none; color: inherit; }
+
+/* ------------------------------------------------------------ headline */
+
+.hero {
+  padding: clamp(3rem, 11vh, 8rem) var(--gutter) 0;
+}
+
+.hero__headline {
+  font-size: clamp(2.8rem, 11vw, 8.5rem);
+  font-weight: 700;
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  margin: 0;
+  max-width: 15ch;
+}
+
+.hero__standfirst {
+  margin: clamp(2rem, 5vh, 3.5rem) 0 0;
+  max-width: var(--measure);
+  font-size: 1.06rem;
+}
+
+.hero__standfirst + .hero__standfirst { margin-top: 1.1rem; }
+
+/* --------------------------------------------------------- the ladder
+   The signature. A colophon is a list of production facts, each either
+   stated or not. Filled bars are conventions books already keep; the
+   open bar is the one this registry exists for. It is drawn empty on
+   purpose, and it stays empty until somebody fills it. */
+
+.ladder {
+  padding: clamp(4rem, 12vh, 9rem) var(--gutter) 0;
+}
+
+.ladder__list { list-style: none; margin: 0; padding: 0; max-width: 46rem; }
+
+.ladder__row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.55rem 0;
+}
+
+.ladder__label {
+  flex: 0 0 9.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ladder__bar {
+  height: 13px;
+  background: var(--ink);
+  transform-origin: left center;
+}
+
+.ladder__row--open .ladder__bar {
+  background: transparent;
+  border: 1px solid var(--ink);
+}
+
+.ladder__row--open .ladder__label { font-weight: 700; }
+
+.ladder__note {
+  margin: 2.25rem 0 0;
+  max-width: var(--measure);
+  font-size: 0.95rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ladder__bar { animation: draw 0.5s cubic-bezier(0.2, 0, 0, 1) backwards; }
+  @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+
+/* --------------------------------------------------------------- states */
+
+.states { padding: clamp(4rem, 12vh, 9rem) var(--gutter) 0; }
+
+.states__list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  max-width: 46rem;
+  border-top: 1px solid var(--ink);
+}
+
+.states__item {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.1rem 0;
+  display: flex;
+  gap: 1.25rem;
+  align-items: baseline;
+}
+
+.states__name {
+  flex: 0 0 9.5rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.states__gloss { margin: 0; font-size: 0.98rem; }
+
+/* --------------------------------------------------------- section head */
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+}
+
+/* --------------------------------------------------------------- prose */
+
+.prose {
+  padding: var(--gutter);
+  max-width: calc(var(--measure) + var(--gutter) * 2);
+}
+
+.prose h1 {
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+}
+
+.prose h2 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 3.5rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
+.prose h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 2rem 0 0.6rem;
+}
+
+.prose p { margin: 0 0 1.1rem; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.1rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose strong { font-weight: 700; }
+.prose hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.prose th, .prose td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.7rem 1rem 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.prose th {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-bottom-color: var(--ink);
+}
+
+.prose .version {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--held);
+  margin-bottom: 3rem;
+}
+
+/* -------------------------------------------------------------- footer */
+
+.footer {
+  margin-top: clamp(5rem, 16vh, 11rem);
+  padding: 2rem var(--gutter) 3.5rem;
+  border-top: 1px solid var(--ink);
+  font-size: 0.86rem;
+}
+
+.footer p { margin: 0 0 0.6rem; max-width: var(--measure); }
+.footer p:last-child { margin-bottom: 0; }
+.footer .footer__disclosure { color: var(--held); }
+
+@media (max-width: 34rem) {
+  .ladder__row, .states__item { flex-direction: column; gap: 0.4rem; }
+  .ladder__label, .states__name { flex: none; }
+  .ladder__bar { width: 100% !important; }
+}
