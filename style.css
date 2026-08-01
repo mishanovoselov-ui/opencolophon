@@ -268,3 +268,21 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; background
   .hero__figure img { width: auto; height: clamp(5rem, 12vh, 8rem); }
   .hero__headline { max-width: 100%; }
 }
+
+/* --- hero fit: bound the glyph column, size the headline to what's left */
+
+.hero__grid { grid-template-columns: minmax(0, 1fr) clamp(4.5rem, 14vw, 12rem); }
+
+.hero__figure img { width: 100%; height: auto; }
+
+.hero__headline {
+  font-size: clamp(2.3rem, 7vw, 6.2rem);
+  max-width: 13ch;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 46rem) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__figure img { width: auto; height: clamp(5rem, 12vh, 8rem); }
+  .hero__headline { max-width: 100%; }
+}
