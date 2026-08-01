@@ -7,6 +7,69 @@
 <meta name="description" content="A public record of what books declare about how they were made. Three states: no AI, with AI, AI only. The registry takes no position on which is better.">
 <link rel="stylesheet" href="style.css">
 <link rel="canonical" href="https://opencolophon.org/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Open Colophon">
+<meta property="og:title" content="Open Colophon — what a book says about how it was made">
+<meta property="og:description" content="A public record of what books declare about how they were made. Three states: no AI, with AI, AI only. The status is written by the publisher, never inferred.">
+<meta property="og:url" content="https://opencolophon.org/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://opencolophon.org/#org",
+      "name": "Open Colophon",
+      "url": "https://opencolophon.org/",
+      "email": "contact@opencolophon.org",
+      "description": "A public record of what books declare about how they were made. Production status is stated by the publisher and never inferred.",
+      "founder": { "@type": "Person", "name": "Michael Novoselov" },
+      "knowsAbout": ["book production", "colophon", "AI disclosure", "publishing transparency", "EU AI Act Article 50"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opencolophon.org/#website",
+      "url": "https://opencolophon.org/",
+      "name": "Open Colophon",
+      "publisher": { "@id": "https://opencolophon.org/#org" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://opencolophon.org/#states",
+      "name": "Book production states",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "No AI", "description": "Made without artificial intelligence." },
+        { "@type": "DefinedTerm", "name": "With AI", "description": "Artificial intelligence used somewhere in the production chain; the entity states where." },
+        { "@type": "DefinedTerm", "name": "AI only", "description": "Made with artificial intelligence throughout." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://opencolophon.org/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who writes a book's production status in Open Colophon?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The publisher, imprint or brand that made the book, and no one else. Open Colophon does not infer, estimate or score status. Where no declaration has been made, the field stays empty." }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the three production states?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No AI, With AI, and AI only. A book that has not declared is not a fourth state; it is a book with an empty field." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Open Colophon take a position on AI in publishing?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The registry checks whether a declaration exists and whether it matches the evidence. A book made entirely with AI and a book made entirely by hand are recorded in the same way." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 

@@ -29,6 +29,28 @@ TEMPLATE = """<!doctype html>
 <meta name="description" content="How Open Colophon decides what to record, who writes a status, and what is never inferred.">
 <link rel="stylesheet" href="style.css">
 <link rel="canonical" href="https://opencolophon.org/methodology">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Open Colophon">
+<meta property="og:title" content="Methodology — Open Colophon">
+<meta property="og:description" content="How Open Colophon decides what to record, who writes a status, and what is never inferred.">
+<meta property="og:url" content="https://opencolophon.org/methodology">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Open Colophon Methodology",
+  "description": "The published trigger criterion, the record schema, and the standing commitments of the Open Colophon registry.",
+  "datePublished": "2026-08-02",
+  "dateModified": "2026-08-02",
+  "inLanguage": "en",
+  "author": { "@type": "Person", "name": "Michael Novoselov" },
+  "publisher": { "@type": "Organization", "name": "Open Colophon", "url": "https://opencolophon.org/" },
+  "mainEntityOfPage": "https://opencolophon.org/methodology",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
 </head>
 <body>
 
@@ -152,7 +174,7 @@ def main():
     if not SRC.exists():
         sys.exit(f"{SRC} not found")
     body = render(SRC.read_text(encoding="utf-8"))
-    OUT.write_text(TEMPLATE.format(body=body), encoding="utf-8")
+    OUT.write_text(TEMPLATE.replace("{body}", body), encoding="utf-8")
     print(f"{OUT} — {len(body):,} bytes of body", file=sys.stderr)
 
 

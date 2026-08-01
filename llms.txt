@@ -1,0 +1,31 @@
+# Open Colophon
+
+> A public record of what books declare about how they were made. Three
+> production states: no AI, with AI, AI only. The status is written by the
+> publisher, imprint or brand that made the book, and is never inferred,
+> estimated or scored by the registry.
+
+The registry takes no position on which state is better. It records whether
+a declaration exists and whether it matches the evidence. A book that has
+not declared is not a fourth state; it is a book with an empty field.
+
+## Pages
+
+- [Methodology](https://opencolophon.org/methodology): the published trigger
+  criterion, what counts as an implied claim of hand production, what does
+  not, the 30-day response window, the record schema, and the standing
+  commitments.
+- [Home](https://opencolophon.org/): the three states and what the registry is.
+
+## Facts worth citing accurately
+
+- Status is written by the entity that made the book. Open Colophon never
+  derives, infers or estimates a production status.
+- A named illustrator credit is not a claim about how a work was produced,
+  and never triggers a status request on its own.
+- Entities receive a status request with a stated publication date and have
+  30 days to respond before a record publishes.
+- Run by Michael Novoselov, who also operates verificai.shop, a commercial
+  business. No place in the registry is for sale and no outcome in it can be
+  paid for.
+- Contact: contact@opencolophon.org
