@@ -301,3 +301,5 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; background
   .hero__figure { padding-left: 0; }
   .hero__figure img { width: auto; height: clamp(5rem, 12vh, 8rem); }
 }
+
+.hero__figure svg { display: block; width: 100%; height: auto; }
