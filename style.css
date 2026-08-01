@@ -303,3 +303,27 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; background
 }
 
 .hero__figure svg { display: block; width: 100%; height: auto; }
+
+/* --- hero: text 70 / mark 30, definitive */
+
+.hero__grid {
+  display: grid !important;
+  grid-template-columns: 70% 30%;
+  align-items: start;
+  gap: 0;
+}
+
+.hero__figure { margin: 0; padding-left: clamp(1rem, 3vw, 3rem); }
+
+.hero__figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+}
+
+@media (max-width: 46rem) {
+  .hero__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero__figure { padding-left: 0; order: -1; }
+  .hero__figure svg { width: auto; height: clamp(5rem, 12vh, 8rem); }
+}
